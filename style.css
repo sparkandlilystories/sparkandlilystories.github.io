@@ -1,0 +1,311 @@
+/* Little Spark Stories – calm, cosy, mobile first */
+
+:root {
+  --cream: #fff8ec;
+  --cream-deep: #fdeed5;
+  --amber: #f4b54a;
+  --amber-soft: #fbd99a;
+  --amber-dark: #8a5a12;
+  --blue: #dceaf5;
+  --blue-soft: #eef5fb;
+  --blue-dark: #33536e;
+  --ink: #3a3045;
+  --ink-soft: #5c5268;
+  --white: #ffffff;
+  --placeholder: #f3e6cf;
+  --radius: 24px;
+  --radius-small: 16px;
+  --shadow: 0 8px 24px rgba(90, 70, 40, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", "Nunito", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 5.5vw, 2.3rem); text-align: center; }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--blue-dark); }
+
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.narrow {
+  max-width: 680px;
+  text-align: center;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  padding: 10px 16px;
+  background: var(--white);
+  border-radius: var(--radius-small);
+  z-index: 10;
+}
+
+.skip-link:focus { top: 12px; }
+
+/* Images with a soft placeholder when the file is missing */
+
+.img-frame {
+  background: var(--placeholder);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.img-frame img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: transparent; /* hide alt text drawn over the placeholder */
+}
+
+/* A broken image renders this pseudo-element, covering the browser's broken icon */
+.img-frame img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--placeholder);
+}
+
+/* Buttons – big, friendly tap targets */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: "Fredoka", "Nunito", system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: #3b2606;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover { background: var(--amber-soft); }
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--amber);
+}
+
+.btn-secondary:hover { background: var(--cream-deep); }
+
+.btn-link {
+  background: var(--white);
+  color: var(--blue-dark);
+  border: 2px solid var(--blue);
+}
+
+.btn-link:hover { background: var(--blue-soft); }
+
+/* Hero */
+
+.hero {
+  background: linear-gradient(180deg, var(--blue-soft) 0%, var(--cream) 100%);
+  padding: 48px 0 40px;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-text { text-align: center; }
+
+.tagline {
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hero-image {
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow);
+}
+
+/* A tiny Spark above the title, with a very slow, gentle glow */
+
+.spark-dot {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3d1 0%, var(--amber) 70%);
+  box-shadow: 0 0 18px 6px rgba(244, 181, 74, 0.45);
+  animation: glow 6s ease-in-out infinite;
+}
+
+.spark-glow { animation: glow-image 6s ease-in-out infinite; }
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 14px 4px rgba(244, 181, 74, 0.35); }
+  50% { box-shadow: 0 0 24px 10px rgba(244, 181, 74, 0.6); }
+}
+
+@keyframes glow-image {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-dot,
+  .spark-glow { animation: none; }
+  .btn { transition: none; }
+}
+
+/* Sections */
+
+.section { padding: 56px 0; }
+
+.friends { background: var(--white); }
+
+.cards {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 16px 16px 8px;
+  text-align: center;
+}
+
+.card-image {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-small);
+  margin-bottom: 16px;
+}
+
+.card p { color: var(--ink-soft); }
+
+.watch { background: var(--blue-soft); }
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.books-inner {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+.books-image { aspect-ratio: 4 / 3; }
+
+.books-text { text-align: center; }
+
+.books-text h2 { text-align: center; }
+
+.parents {
+  background: var(--cream-deep);
+}
+
+.parents p { color: var(--ink); }
+
+/* Footer */
+
+.footer {
+  padding: 32px 0 40px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.footer p { margin: 0.2em 0; }
+
+/* Larger screens */
+
+@media (min-width: 560px) {
+  .buttons,
+  .link-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .hero { padding: 72px 0 64px; }
+
+  .hero-inner,
+  .books-inner { grid-template-columns: 1fr 1fr; gap: 56px; }
+
+  .hero-text,
+  .books-text { text-align: left; }
+
+  .hero-text .buttons { justify-content: flex-start; }
+
+  .books-text h2 { text-align: left; }
+
+  .cards { grid-template-columns: repeat(4, 1fr); }
+
+  .section { padding: 80px 0; }
+}
