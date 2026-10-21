@@ -153,12 +153,12 @@ a { color: var(--blue-dark); }
 
 .hero {
   background: linear-gradient(180deg, var(--blue-soft) 0%, var(--cream) 100%);
-  padding: 48px 0 40px;
+  padding: 28px 0 40px;
 }
 
 .hero-inner {
   display: grid;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
 }
 
@@ -177,7 +177,11 @@ a { color: var(--blue-dark); }
 }
 
 .hero-image {
-  aspect-ratio: 4 / 3;
+  order: -1; /* picture first on mobile */
+  width: 85%;
+  max-width: 420px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   box-shadow: var(--shadow);
 }
 
@@ -223,23 +227,37 @@ a { color: var(--blue-dark); }
   margin: 24px 0 0;
   padding: 0;
   display: grid;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 
 .card {
   background: var(--cream);
-  border-radius: var(--radius);
-  padding: 16px 16px 8px;
+  border-radius: var(--radius-small);
+  padding: 10px 10px 4px;
   text-align: center;
 }
 
 .card-image {
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-small);
-  margin-bottom: 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
-.card p { color: var(--ink-soft); }
+/* Square crop that fills the frame neatly */
+.card-image img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card h3 { font-size: 1.15rem; margin-bottom: 0.25em; }
+
+.card p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
 
 .watch { background: var(--blue-soft); }
 
@@ -279,6 +297,14 @@ a { color: var(--blue-dark); }
 
 .footer p { margin: 0.2em 0; }
 
+.back-to-top {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+
 /* Larger screens */
 
 @media (min-width: 560px) {
@@ -288,8 +314,6 @@ a { color: var(--blue-dark); }
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
@@ -305,7 +329,22 @@ a { color: var(--blue-dark); }
 
   .books-text h2 { text-align: left; }
 
-  .cards { grid-template-columns: repeat(4, 1fr); }
+  .cards { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  .card { padding: 16px 16px 8px; border-radius: var(--radius); }
+
+  .card-image { border-radius: var(--radius-small); margin-bottom: 16px; }
+
+  .card h3 { font-size: 1.35rem; }
+
+  .card p { font-size: 1rem; }
+
+  .hero-image {
+    order: 0;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: 16 / 9;
+  }
 
   .section { padding: 80px 0; }
 }

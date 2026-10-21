@@ -23,4 +23,4 @@ And this one in the main (root) folder:
 
 Until an image is uploaded, a soft cream placeholder colour is shown in its place.
 
-Tips: landscape (4:3) works best for `hero.jpg` and `books.jpg`, square for the four character pictures, and around 1200×630 or larger for `hero.jpg` so shared links look sharp.
+Tips: landscape works best for `hero.jpg` (16:9) and `books.jpg` (4:3), and around 1200×630 or larger for `hero.jpg` so shared links look sharp. The four character pictures are shown as squares, so square images with the character centred work best – crop off any pale bands at the edges before uploading.
