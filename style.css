@@ -325,7 +325,8 @@ a { color: var(--blue-dark); }
   .hero-text,
   .books-text { text-align: left; }
 
-  .hero-text .buttons { justify-content: flex-start; }
+  .hero-text .buttons,
+  .books-text .buttons { justify-content: flex-start; }
 
   .books-text h2 { text-align: left; }
 
