@@ -4,7 +4,7 @@ The home page for **Little Spark Stories** – calm, gentle, AI-animated bedtime
 
 Live at: https://sparkandlilystories.github.io
 
-It is a simple one-page site (`index.html` + `style.css`) used as a link-in-bio page for Instagram, YouTube and TikTok. It has no cookies, no analytics and no tracking.
+It is a simple one-page site (`index.html` + `style.css`) used as a link-in-bio page for Instagram, YouTube and TikTok. We use a simple, privacy-friendly visitor counter ([GoatCounter](https://www.goatcounter.com)). No cookies, no personal data, no tracking.
 
 ## Images to upload
 
