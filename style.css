@@ -327,6 +327,19 @@ a { color: var(--blue-dark); }
 
 .hungarian a { color: var(--blue-dark); }
 
+.footer .contact { margin-top: 1.2em; }
+
+.footer a { color: var(--blue-dark); }
+
+.footer a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+.footer .privacy {
+  max-width: 34em;
+  margin: 1em auto 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 .back-to-top {
   display: inline-block;
   margin-top: 12px;
