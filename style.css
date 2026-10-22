@@ -375,6 +375,25 @@ a { color: var(--blue-dark); }
 
 .barbara-card p { text-align: left; }
 
+.barbara-photo {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 20px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--placeholder);
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 2px var(--amber-soft), 0 0 28px 6px rgba(244, 181, 74, 0.35);
+}
+
+.barbara-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .barbara-card .signature {
   margin-top: 1.25em;
   font-family: "Fredoka", "Nunito", system-ui, sans-serif;
