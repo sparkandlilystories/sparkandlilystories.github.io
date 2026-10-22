@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sparkandlilystories.github.io/sitemap.xml
