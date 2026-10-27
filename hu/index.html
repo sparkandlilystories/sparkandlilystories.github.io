@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Little Spark Stories – Nyugodt esti mesék kicsiknek</title>
+  <meta name="description" content="Nyugodt, szelíd esti mesék és képeskönyvek 2–5 éveseknek Sparkkal, Lilyvel, Lunával és Hóbucival. Ingyenes magyar mese, képeskönyvek és videók.">
+  <meta name="theme-color" content="#0e1330">
+
+  <!-- Open Graph: how the link looks when shared -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Little Spark Stories">
+  <meta property="og:title" content="Little Spark Stories – Nyugodt esti mesék kicsiknek">
+  <meta property="og:description" content="Nyugodt, szelíd esti mesék és képeskönyvek 2–5 éveseknek Sparkkal, Lilyvel, Lunával és Hóbucival. Ingyenes magyar mese, képeskönyvek és videók.">
+  <meta property="og:image" content="https://sparkandlilystories.github.io/images/hero.jpg">
+  <meta property="og:image:alt" content="Spark, a kis világító fénygömb, Lilyvel és Luna nyuszival esti meséléskor">
+  <meta property="og:url" content="https://sparkandlilystories.github.io/hu/">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="alternate" hreflang="en" href="https://sparkandlilystories.github.io/">
+  <link rel="alternate" hreflang="hu" href="https://sparkandlilystories.github.io/hu/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap">
+<style>
+/* Layout: a bedtime walk through the library where Spark was born — night sky colours, warm book-glow amber, one gentle idea per screen. Single night look by choice. */
+:root{
+  --night:#0e1330; --night-2:#18204a; --ink:#fbf3e4; --muted:#bfc4de; --amber:#f6b95f; --glow:#ffdca0; --paper:#f7eedf; --paper-ink:#3a2e2a; --rose:#f2a3a8; --line:rgba(246,185,95,.28);
+  --display:"Fredoka", "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Nunito Sans", "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px)); --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; background:var(--night)}
+body{margin:0; background:var(--night); color:var(--ink); font:400 17px/1.65 var(--body); -webkit-font-smoothing:antialiased; overflow-x:clip}
+img,video,canvas{max-width:100%; display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--glow); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1120px; margin:0 auto; padding-left:var(--gut); padding-right:var(--gut-r)}
+h1,h2,h3{font-family:var(--display); font-weight:500; line-height:1.05; margin:0; text-wrap:balance; letter-spacing:-.005em}
+p{margin:0}
+.kicker{font:600 13px/1 var(--body); letter-spacing:.18em; text-transform:uppercase; color:var(--amber)}
+.btn{display:inline-flex; align-items:center; gap:10px; font:600 16px/1 var(--body); text-decoration:none; padding:16px 24px; border-radius:999px; background:var(--amber); color:#2a1d10; box-shadow:0 0 0 0 rgba(246,185,95,.5); transition:transform .25s, box-shadow .25s, background .25s}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 30px -8px rgba(246,185,95,.7); background:var(--glow)}
+.btn.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 2px rgba(251,243,228,.5)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--glow); color:var(--glow)}
+.skip{position:absolute; left:-999px; top:8px}
+.skip:focus{left:12px; z-index:20; background:var(--ink); color:var(--night); padding:10px 14px; border-radius:8px}
+
+.lang{display:flex; gap:2px; padding:3px; border-radius:999px; box-shadow:inset 0 0 0 1.5px rgba(251,243,228,.35); font:600 13px/1 var(--body); margin-left:auto}
+.lang a{text-decoration:none; color:var(--muted); padding:8px 10px; border-radius:999px}
+.lang a[aria-current]{background:rgba(246,185,95,.2); color:var(--glow)}
+.lang a:hover{color:var(--glow)}
+.bar .name{white-space:nowrap}
+@media (max-width:480px){.bar{gap:8px}.bar .name{font-size:15px; gap:7px}.bar .btn{padding:10px 14px; font-size:13px}.lang a{padding:7px 8px}}
+/* top bar */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--night)}
+.bar{position:fixed; top:env(safe-area-inset-top,0px); left:0; right:0; z-index:9; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px var(--gut-r) 14px var(--gut); transition:background .3s}
+.bar.solid{background:rgba(14,19,48,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px)}
+.bar .name{font:600 20px/1 var(--display); text-decoration:none; display:flex; align-items:center; gap:10px}
+.bar .name i{width:14px; height:14px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #fff4d6, var(--amber) 55%, rgba(246,185,95,0) 75%); box-shadow:0 0 16px 4px rgba(246,185,95,.55); display:block}
+.bar nav{display:flex; gap:22px; font:600 15px/1 var(--body)}
+.bar nav a{text-decoration:none; color:var(--muted)}
+.bar nav a:hover{color:var(--glow)}
+.bar .btn{padding:12px 18px; font-size:14px; white-space:nowrap}
+@media (max-width:820px){.bar nav{display:none}}
+@media (max-width:374px){.bar .name{font-size:0; gap:0}.bar .name i{width:18px; height:18px}}
+
+/* 1 · hero: Spark looks wherever you are */
+.hero{position:relative; height:100vh; height:100svh; min-height:560px; overflow:hidden; background:#1b1220}
+#look{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,19,48,.55) 0%, rgba(14,19,48,0) 26%, rgba(14,19,48,0) 58%, rgba(14,19,48,.92) 100%); pointer-events:none}
+.hero-txt{position:absolute; left:0; right:0; bottom:clamp(22px,5vh,56px); z-index:2; text-align:center; display:grid; justify-items:center; gap:10px}
+.hero h1{font-size:clamp(38px,5.4vw,74px); font-weight:600; text-shadow:0 2px 30px rgba(14,19,48,.6)}
+.hero h1 span{color:var(--glow)}
+.hero .sub{font-size:clamp(17px,2vw,21px); color:#e7e2f2; max-width:36ch}
+.hero .row{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:6px}
+.hint{font:600 13px/1 var(--body); color:var(--glow); letter-spacing:.06em; opacity:.85; margin-top:4px}
+
+/* 2 · once upon a time */
+.tale{position:relative; padding-block:clamp(72px,12vw,140px)}
+.tale .grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,64px); align-items:center}
+.tale figure{margin:0; border-radius:28px; overflow:hidden; box-shadow:0 30px 80px -30px rgba(246,185,95,.45); aspect-ratio:16/10}
+.tale figure img{width:100%; height:100%; object-fit:cover}
+.tale .txt{display:grid; gap:18px}
+.tale h2{font-size:clamp(34px,4.6vw,56px)}
+.tale p{color:var(--muted); font-size:clamp(17px,1.6vw,19px); max-width:44ch}
+.tale p em{color:var(--glow); font-style:normal}
+@media (max-width:820px){.tale .grid{grid-template-columns:1fr}}
+
+/* 3 · Spark sets off: the shelves glide upward with the scroll */
+.glide{position:relative; height:260vh}
+.glide-sticky{position:sticky; top:0; height:100vh; height:100svh; overflow:hidden}
+#glideCanvas{position:absolute; inset:0; width:100%; height:100%}
+.glide-sticky::after{content:""; position:absolute; inset:0; background:radial-gradient(70% 60% at 50% 55%, transparent 40%, rgba(14,19,48,.75) 100%); pointer-events:none}
+.glide-cap{position:absolute; left:0; right:0; z-index:2; text-align:center; padding-inline:var(--gut); transition:opacity .5s, transform .5s}
+.glide-cap h2{font-size:clamp(32px,5vw,64px); text-shadow:0 2px 30px rgba(14,19,48,.8)}
+.glide-cap p{color:#efe9f6; margin-top:10px; text-shadow:0 1px 16px rgba(14,19,48,.9)}
+.glide-cap.a{top:22%}.glide-cap.b{bottom:18%}
+.glide-cap.off{opacity:0; transform:translateY(12px)}
+
+/* 4 · the books slide off the shelf */
+.shelf-sec{background:linear-gradient(180deg, var(--night) 0%, #241a2a 12%, #2b1e22 100%); padding-block:clamp(72px,10vw,120px) 40px}
+.shelf-head{display:grid; gap:14px; text-align:center; justify-items:center; margin-bottom:44px}
+.shelf-head h2{font-size:clamp(34px,4.6vw,56px)}
+.shelf-head p{color:var(--muted); max-width:52ch}
+.shelf{position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,3vw,36px) clamp(16px,2.6vw,30px); padding-bottom:28px}
+.book{position:relative; display:grid; gap:10px; text-decoration:none; color:var(--ink)}
+.book .cover{position:relative; border-radius:16px; overflow:hidden; background:#3a2a24; aspect-ratio:4/3; box-shadow:0 22px 40px -22px rgba(0,0,0,.8); transition:transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s}
+.book .cover img{width:100%; height:100%; object-fit:cover}
+.book:hover .cover{transform:translateY(-6px) rotate(-.6deg); box-shadow:0 30px 50px -22px rgba(246,185,95,.5)}
+.book h3{font-size:22px; margin-top:4px}
+.book .meta{display:flex; justify-content:space-between; align-items:baseline; gap:10px; color:var(--muted); font-size:15px}
+.book .price{font:600 18px/1 var(--display); color:var(--glow)}
+.book .tag{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--amber)}
+.book .go{font:600 14px/1 var(--body); color:var(--amber)}
+.plank{height:18px; border-radius:6px; background:linear-gradient(180deg,#8a5a3a,#5c3a26); box-shadow:0 14px 30px -10px rgba(0,0,0,.8), inset 0 2px 0 rgba(255,220,170,.25); margin-top:-6px}
+.offer{align-content:start}
+.shelf.four{grid-template-columns:repeat(4,1fr)}
+.shelf.four .book h3{font-size:19px}
+.book.soon .cover img{filter:saturate(.75) brightness(.85)}
+@media (max-width:900px){.shelf.four{grid-template-columns:repeat(2,1fr)}}
+.slide{transition:opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1)}
+.slide.pre{opacity:.001; transform:translateY(26px) scale(.97)}
+@media (max-width:900px){.shelf{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.shelf{grid-template-columns:1fr}}
+.offers{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px}
+.offer{border-radius:24px; padding:26px 26px 24px; display:grid; gap:12px; background:rgba(255,220,160,.07); box-shadow:inset 0 0 0 1px var(--line)}
+.offer.main{background:linear-gradient(135deg, rgba(246,185,95,.22), rgba(242,163,168,.12)); box-shadow:inset 0 0 0 1px rgba(246,185,95,.5)}
+.offer h3{font-size:28px}
+.offer p{color:var(--muted)}
+.offer img{border-radius:14px}
+@media (max-width:760px){.offers{grid-template-columns:1fr}}
+
+/* 5 · friends */
+.friends{padding-block:clamp(72px,10vw,120px); background:#2b1e22}
+.friends h2{font-size:clamp(34px,4.6vw,56px); text-align:center}
+.friends .lead{color:var(--muted); text-align:center; margin:12px auto 44px; max-width:44ch}
+.crew{display:grid; grid-template-columns:repeat(4,1fr); gap:22px}
+.pal{display:grid; gap:12px; justify-items:center; text-align:center}
+.pal .ph{width:min(100%,220px); aspect-ratio:1; border-radius:50%; overflow:hidden; background:var(--paper); box-shadow:0 0 0 6px rgba(246,185,95,.18), 0 20px 50px -20px rgba(246,185,95,.55)}
+.pal .ph img{width:100%; height:100%; object-fit:cover}
+.pal h3{font-size:26px; color:var(--glow)}
+.pal p{color:var(--muted); font-size:16px; max-width:24ch}
+@media (max-width:860px){.crew{grid-template-columns:repeat(2,1fr)}}
+
+/* 6 · Barbara by the moon window */
+.moon{position:relative; min-height:100vh; min-height:100svh; display:grid; align-items:center; padding-block:96px; overflow:hidden}
+.moon > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:70% 50%}
+.moon::before{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(14,19,48,.94) 0%, rgba(14,19,48,.8) 42%, rgba(14,19,48,.1) 75%); z-index:1}
+.letter{position:relative; z-index:2; max-width:560px; display:grid; gap:16px}
+.letter .who{display:flex; align-items:center; gap:16px}
+.letter .who img{width:88px; height:88px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 4px rgba(246,185,95,.35)}
+.letter h2{font-size:clamp(34px,4.4vw,52px)}
+.letter p{color:#e2def0}
+.letter .sign{font:500 26px/1 var(--display); color:var(--glow)}
+@media (max-width:760px){.moon::before{background:linear-gradient(180deg, rgba(14,19,48,.55) 0%, rgba(14,19,48,.93) 38%)}.moon > img{object-position:72% 0}}
+
+/* 7 · watch + parents */
+.extras{padding-block:clamp(64px,9vw,110px); display:grid; grid-template-columns:1fr 1fr; gap:24px}
+.box{border-radius:24px; padding:28px; background:var(--night-2); box-shadow:inset 0 0 0 1px rgba(191,196,222,.15); display:grid; gap:14px; align-content:start}
+.box h2{font-size:clamp(28px,3vw,38px)}
+.box p{color:var(--muted)}
+.box .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+.box .links a{font:600 15px/1 var(--body); text-decoration:none; padding:12px 16px; border-radius:999px; box-shadow:inset 0 0 0 1.5px rgba(246,185,95,.45); color:var(--glow)}
+.box .links a:hover{background:rgba(246,185,95,.12)}
+@media (max-width:760px){.extras{grid-template-columns:1fr}}
+
+/* 8 · Spark flies off into the night */
+.finale{position:relative; min-height:92vh; min-height:92svh; display:grid; align-items:end; overflow:hidden}
+.finale > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.finale::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,19,48,0) 30%, rgba(14,19,48,.92) 85%); z-index:1}
+.finale .in{position:relative; z-index:2; padding-block:0 72px; display:grid; gap:16px; justify-items:center; text-align:center}
+.finale h2{font-size:clamp(36px,5.4vw,70px)}
+.finale p{color:#e2def0; max-width:46ch}
+footer{background:#0a0e24; color:var(--muted); font-size:15px; padding-block:40px 56px}
+footer .wrap{display:grid; gap:10px}
+footer a{color:var(--glow)}
+footer .small{font-size:13px; opacity:.85; max-width:70ch}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .glide{height:auto}.glide-sticky{position:relative; height:70vh}
+  .glide-cap.off{opacity:1; transform:none}
+  .slide.pre{opacity:1; transform:none}
+  .book .cover{transition:none}
+}
+/* Spark speaks — only when tapped, one short line at a time */
+.say{position:relative; display:inline-flex; align-items:center; gap:10px; font:600 15px/1 var(--body); color:var(--glow); background:rgba(14,19,48,.55); border:0; cursor:pointer; padding:10px 16px 10px 10px; border-radius:999px; box-shadow:inset 0 0 0 1.5px rgba(246,185,95,.5); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:background .25s, box-shadow .25s}
+.say:hover{background:rgba(246,185,95,.14)}
+.say .orb{width:26px; height:26px; border-radius:50%; flex:none; background:radial-gradient(circle at 36% 34%, #fff6dc, var(--amber) 52%, rgba(246,185,95,.15) 74%); box-shadow:0 0 14px 3px rgba(246,185,95,.5); transition:box-shadow .3s}
+.say.speaking .orb{animation:talk .42s ease-in-out infinite alternate}
+.say.speaking{box-shadow:inset 0 0 0 1.5px var(--glow), 0 0 26px -4px rgba(246,185,95,.7)}
+@keyframes talk{from{transform:scale(1); box-shadow:0 0 12px 2px rgba(246,185,95,.45)} to{transform:scale(1.18); box-shadow:0 0 26px 8px rgba(255,220,160,.75)}}
+.bubble{position:absolute; left:50%; bottom:calc(100% + 14px); transform:translate(-50%,6px); width:max-content; max-width:min(300px,80vw); background:var(--paper); color:var(--paper-ink); font:500 17px/1.35 var(--display); text-align:center; padding:12px 16px; border-radius:18px; box-shadow:0 14px 34px -12px rgba(0,0,0,.6); opacity:0; pointer-events:none; transition:opacity .3s, transform .3s; z-index:5; white-space:normal}
+.bubble::after{content:""; position:absolute; left:50%; top:100%; margin-left:-8px; border:8px solid transparent; border-top-color:var(--paper)}
+.say.speaking .bubble, .say.done .bubble{opacity:1; transform:translate(-50%,0)}
+.hero .say{position:static}
+.hero .bubble{bottom:calc(100% + clamp(40px, 52vh - 90px, 380px)); font-size:19px; max-width:min(320px,86vw)}
+@media (min-width:900px){.hero .bubble{left:calc(50% + 330px); bottom:calc(100% + 170px); text-align:left}.hero .bubble::after{left:10px; margin-left:0; border-top-color:var(--paper); transform:skewX(30deg)}}
+.say-row{display:flex; justify-content:center; margin-top:18px}
+@media (prefers-reduced-motion: reduce){.say.speaking .orb{animation:none; box-shadow:0 0 24px 7px rgba(255,220,160,.75)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#books">Ugrás a könyvekhez</a>
+<header class="bar" id="bar">
+  <a class="name" href="#top"><i aria-hidden="true"></i>Little Spark Stories</a>
+  <nav aria-label="Részek"><a href="#tale">Spark meséje</a><a href="#books">Könyvek</a><a href="#friends">Barátok</a><a href="#barbara">Rólam</a></nav>
+  <div class="lang" role="navigation" aria-label="Language / Nyelv"><a href="/" hreflang="en" lang="en">EN</a><a href="/hu/" hreflang="hu" lang="hu" aria-current="page">HU</a></div>
+  <a class="btn" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener">Ingyenes mese</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Spark a könyvtárban">
+    <canvas id="look" width="1280" height="731" role="img" aria-label="Spark, a kis világító fénygömb egy meghitt, esti könyvtárban lebeg és körülnéz"></canvas>
+    <div class="hero-txt wrap">
+      <h1>Little <span>Spark</span> Stories</h1>
+      <p class="sub">Nyugodt, szelíd mesék a legkisebbeknek.</p>
+      <div class="row">
+        <a class="btn" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener">Kérem az ingyenes mesét</a>
+        <a class="btn ghost" href="#books">Spark könyvei</a>
+      </div>
+      <button class="say" type="button" data-clip="" data-text="Szia! Spark vagyok. Itt születtem, ebben a könyvtárban. Keressünk együtt egy mesét?"><i class="orb" aria-hidden="true"></i><span class="lbl">Köszönj Sparknak</span><span class="bubble" aria-live="polite"></span></button>
+      <p class="hint" id="hint">Mozgasd az egeret! Spark figyel téged.</p>
+    </div>
+  </section>
+
+  <section class="tale" id="tale">
+    <div class="wrap grid">
+      <figure class="slide"><img src="../assets/spark-first-eyes.jpg" alt="Spark először nyitja ki a szemét egy nyitott könyv fölött a holdfényes könyvtárban" loading="lazy"></figure>
+      <div class="txt slide">
+        <span class="kicker">Egyszer volt, hol nem volt</span>
+        <h2>Spark egy könyvtárban született.</h2>
+        <p>Egy csendes éjszakán, egy nagyon régi könyvtárban fényleni kezdtek a szavak a könyvekben. Felszálltak, összekavarodtak, és egy apró fény lett belőlük, nagy, kíváncsi szemekkel.</p>
+        <p>Ez a kis fény lett <em>Spark</em>: egy szavakból született barát, aki még most ismerkedik a világgal és az érzésekkel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="glide" aria-label="Spark felfedezőútra indul">
+    <div class="glide-sticky">
+      <canvas id="glideCanvas" width="1280" height="704" aria-hidden="true"></canvas>
+      <div class="glide-cap a" id="capA"><h2>Spark hát útnak indult…</h2></div>
+      <div class="glide-cap b off" id="capB"><h2>…és megtalálta a saját meséit.</h2><p>Minden könyv egy szelíd kaland Lilyvel és Lunával.</p></div>
+    </div>
+  </section>
+
+  <section class="shelf-sec" id="books">
+    <div class="wrap">
+      <div class="shelf-head">
+        <span class="kicker">Képeskönyvek</span>
+        <h2>Spark könyvespolca</h2>
+        <p>A képeskönyvekkel Spark, Lily, Luna és Hóbuci is ott lehet az esti mesélésnél. Egyszerű szavak és puha képek, amelyeket együtt nézegethettek.</p>
+        <div class="say-row"><button class="say" type="button" data-clip="" data-text="Nahát, nézd! Ezek mind az én meséim. Melyiket olvassuk ma este?"><i class="orb" aria-hidden="true"></i><span class="lbl">Mit mond Spark?</span><span class="bubble" aria-live="polite"></span></button></div>
+      </div>
+      <div class="shelf">
+        <a class="book slide" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-born-hu.jpg" alt="A Hogyan született Spark borítója és egy belső oldala" loading="lazy"></div><h3>Hogyan született Spark</h3><div class="meta"><span>Az első mese, magyarul és kétnyelvűen</span><span class="price">Ingyenes</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Letöltöm →</span></a>
+        <a class="book slide" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-snow-hu.jpg" alt="A Spark és az első hó borítója és egy belső oldala" loading="lazy"></div><h3>Spark és az első hó</h3><div class="meta"><span>Magyarul, angolul és kétnyelvűen</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
+        <a class="book slide soon" href="https://payhip.com/b/2PoYK" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-christmas.jpg" alt="Spark adventi naptára – borító" loading="lazy"></div><h3>Spark adventi naptára</h3><div class="meta"><span>24 kis szó decemberre</span></div><span class="tag">✨ Hamarosan magyarul</span><span class="go">Angolul már elérhető →</span></a>
+      </div>
+      <div class="plank" aria-hidden="true"></div>
+      <div class="shelf four" style="margin-top:44px">
+        <a class="book slide soon" href="https://payhip.com/b/IJpvX" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-rainbow.jpg" alt="Spark és a szivárvány – borító" loading="lazy"></div><h3>Spark és a szivárvány</h3><div class="meta"><span>Tanuljuk a színeket</span></div><span class="tag">✨ Hamarosan magyarul</span><span class="go">Angolul már elérhető →</span></a>
+        <a class="book slide soon" href="https://payhip.com/b/OI64K" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-count.jpg" alt="Spark számolni tanul – borító" loading="lazy"></div><h3>Spark számolni tanul</h3><div class="meta"><span>Számolj ötig</span></div><span class="tag">✨ Hamarosan magyarul</span><span class="go">Angolul már elérhető →</span></a>
+        <a class="book slide soon" href="https://payhip.com/b/BebcF" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-sorry.jpg" alt="Spark bocsánatot kér – borító" loading="lazy"></div><h3>Spark bocsánatot kér</h3><div class="meta"><span>Szelíd mese a bocsánatkérésről</span></div><span class="tag">✨ Hamarosan magyarul</span><span class="go">Angolul már elérhető →</span></a>
+        <a class="book slide soon" href="https://payhip.com/b/Rxqm1" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-halloween.jpg" alt="Spark első Halloweenje – borító" loading="lazy"></div><h3>Spark első Halloweenje</h3><div class="meta"><span>Nem ijesztő mese az árnyékokról</span></div><span class="tag">✨ Hamarosan magyarul</span><span class="go">Angolul már elérhető →</span></a>
+      </div>
+      <div class="plank" aria-hidden="true"></div>
+
+      <div class="offers">
+        <div class="offer main slide">
+          <span class="kicker">Kezdd itt</span>
+          <h3>Ingyenes mese magyarul</h3>
+          <p>Hogyan született Spark? Töltsd le ingyen, és nézd meg, megszereti-e a kicsi Sparkot. Magyarul és kétnyelvű változatban is.</p>
+          <img src="../assets/books-born-hu.jpg" alt="A Hogyan született Spark című ingyenes mese" loading="lazy">
+          <a class="btn" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener" style="justify-self:start">Kérem az ingyenes mesét</a>
+        </div>
+        <div class="offer slide">
+          <span class="kicker">Ha a kicsi angolul is tanul</span>
+          <h3>Az 5 könyves csomag (angolul)</h3>
+          <p>Egy hétnyi nyugodt esti mese angolul: szivárvány, számolás, bocsánatkérés, első hó és Halloween egy csomagban, 37% kedvezménnyel.</p>
+          <img src="../assets/books.jpg" alt="Little Spark Stories képeskönyvek egy kupacban" loading="lazy">
+          <a class="btn ghost" href="https://payhip.com/b/sWNVH" target="_blank" rel="noopener" style="justify-self:start">Megnézem a csomagot</a>
+          <a class="btn ghost" href="https://payhip.com/LittleSparkStories" target="_blank" rel="noopener" style="justify-self:start">Az összes könyv</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="friends" id="friends">
+    <div class="wrap">
+      <h2>Spark barátai</h2>
+      <p class="lead">Kalandjai során Spark három barátra talált, akikkel minden mese egy kicsit melegebb lett.</p>
+      <div class="say-row" style="margin:-24px 0 40px"><button class="say" type="button" data-clip="" data-text="Ők a barátaim! Lily, Luna és Hóbuci."><i class="orb" aria-hidden="true"></i><span class="lbl">Spark, kik ők?</span><span class="bubble" aria-live="polite"></span></button></div>
+      <div class="crew">
+        <div class="pal slide"><div class="ph"><img src="../assets/spark.jpg" alt="Spark, egy kicsi, lágyan világító fénygömb" loading="lazy"></div><h3>Spark</h3><p>Kíváncsi kis fény, aki még most tanulja az érzéseket.</p></div>
+        <div class="pal slide"><div class="ph"><img src="../assets/lily.jpg" alt="Lily, egy mosolygós hatéves kislány, göndör barna haja két kontyban" loading="lazy"></div><h3>Lily</h3><p>Bátor, játékos, és mindig kész egy szelíd kalandra.</p></div>
+        <div class="pal slide"><div class="ph"><img src="../assets/luna.jpg" alt="Luna, egy puha, szürke, lógó fülű plüssnyuszi" loading="lazy"></div><h3>Luna</h3><p>Lily puha, szürke nyuszija, a legjobb esti ölelgetős társ.</p></div>
+        <div class="pal slide"><div class="ph"><img src="../assets/snowy.jpg" alt="Hóbuci, a barátságos hóember a havas kertben" loading="lazy"></div><h3>Hóbuci</h3><p>Csendes, barátságos hóember, nagy, meleg szívvel.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="moon" id="barbara">
+    <img src="../assets/spark-moon-window.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <div class="letter slide">
+        <div class="who"><img src="../assets/barbara.jpg" alt="Barbara, a Little Spark Stories alkotója, mellette lágyan világít Spark" loading="lazy"><span class="kicker">Aki Spark mögött áll</span></div>
+        <h2>Szia, Barbara vagyok</h2>
+        <p>Háromgyerekes magyar anyuka vagyok, Angliában élek, és én állok a Little Spark Stories mögött. A gyerekeim már kamaszok, de az esti mesélésekre ma is jól emlékszem!</p>
+        <p>Mielőtt mesterséges intelligenciával kezdtem alkotni, egyéni gyógypedagógiai asszisztensként dolgoztam, sajátos nevelési igényű kisgyerekek mellett. Ott tanultam meg, mennyit jelenthet egy kisgyereknek egy nyugodt, szelíd pillanat. Pontosan ilyennek szántam ezeket a meséket.</p>
+        <p>Spark egy apró, szavakból született, világító barát. A kíváncsi Lilyvel és puha nyuszijával, Lunával együtt nagy „első dolgokat” fedez fel: a havat, a színeket, a bocsánatkérést, a számolást, a karácsonyt…</p>
+        <p>A mesék szándékosan rövidek és lassúak. Nincs kiabálás, nincs rohanás, semmi ijesztő. Mesterséges intelligencia segítségével készülnek, de minden szót és minden képet én választok ki és én ellenőrzök.</p>
+        <p>Köszönöm, hogy együtt olvasol a kicsivel.</p>
+        <p class="sign">– Barbara</p>
+        <div><button class="say" type="button" data-clip="" data-text="Ő Barbara. Ő segít nekem elmesélni a történeteimet."><i class="orb" aria-hidden="true"></i><span class="lbl">Spark, ki az a Barbara?</span><span class="bubble" aria-live="polite"></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap extras">
+    <section class="box slide">
+      <span class="kicker">Nézd meg a meséket</span>
+      <h2>Spark a képernyőn</h2>
+      <p>Rövid, megnyugtató animációs mesék elalvás előtti lecsendesedéshez. A videók egyelőre angol narrációval készülnek.</p>
+      <div class="links">
+        <a href="https://www.youtube.com/@SparkAndLilyStories" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@sparkandlilystories" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/sparkandlilystories" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </section>
+    <section class="box slide">
+      <span class="kicker">Szülőknek</span>
+      <h2>2–5 éveseknek</h2>
+      <p>Puha színek, egyszerű mondatok és egyszerre csak egy érzés, hogy legyen idő együtt észrevenni és megnevezni. Spark maga is egy mesterséges intelligencia, és ez is a mese része.</p>
+    </section>
+  </div>
+
+  <section class="finale" aria-label="Spark elrepül az éjszakába">
+    <img src="../assets/spark-flies-out.jpg" alt="Spark kirepül a könyvtár ablakán a csillagos éjszakába, aranyszínű szikrákat hagyva maga után" loading="lazy">
+    <div class="wrap in slide">
+      <div style="margin-bottom:6px"><button class="say" type="button" data-clip="" data-text="Jó éjszakát, kicsikém! Legközelebb találkozunk!"><i class="orb" aria-hidden="true"></i><span class="lbl">Mondj jó éjt Sparknak</span><span class="bubble" aria-live="polite"></span></button></div>
+      <span class="kicker">Jó éjt, kicsikém</span>
+      <h2>Hová repül ma este Spark?</h2>
+      <p>Kezdjétek ma este egy ingyenes magyar mesével.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener">Kérem az ingyenes mesét</a>
+        <a class="btn ghost" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener">Spark és az első hó</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Little Spark Stories · Szeretettel és egy csipetnyi mesterséges intelligenciával készült</p>
+    <p>Kérdésed vagy ötleted van? Írj nekem: <a href="mailto:innovabizpro@gmail.com">innovabizpro@gmail.com</a></p>
+    <p class="small">Az oldal adatbarát látogatószámlálót használ: nincs süti, nincs személyes adat, nincs követés. A letöltéseket és a vásárlást a Payhip kezeli.</p>
+    <p><a href="#top">Vissza az elejére ↑</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const bar = document.getElementById('bar');
+  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+
+  // image sequence helper: loads frames, draws the nearest loaded one, cover-fit
+  function sequence(canvas, dir, count){
+    const ctx = canvas.getContext('2d'), frames = new Array(count); let drawn = -1;
+    const src = i => dir + '/f' + String(i+1).padStart(3,'0') + '.jpg';
+    function fit(){ const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio||1, 2); canvas.width = Math.round(r.width*d); canvas.height = Math.round(r.height*d); drawn = -1; }
+    function draw(i){
+      let k = i; while(k > 0 && !(frames[k] && frames[k].complete && frames[k].naturalWidth)) k--;
+      const im = frames[k]; if(!im || !im.complete || !im.naturalWidth) return;
+      if(k === drawn) return; drawn = k;
+      const cw = canvas.width, ch = canvas.height, s = Math.max(cw/im.naturalWidth, ch/im.naturalHeight);
+      const w = im.naturalWidth*s, h = im.naturalHeight*s;
+      ctx.drawImage(im, (cw-w)/2, (ch-h)/2, w, h);
+    }
+    function load(first){ for(let i=0;i<count;i++){ if(frames[i]) continue; if(first && i>0 && i<count-1 && i!==Math.floor(count/2)) continue; const im = new Image(); im.decoding='async'; im.onload = () => { if(drawn < 0) draw(first ? Math.floor(count/2) : 0); }; im.src = src(i); frames[i] = im; } }
+    addEventListener('resize', fit); fit();
+    return {draw, load, count};
+  }
+
+  // 1 · Spark follows the pointer (and drifts gently by itself when nobody is moving)
+  const look = sequence(document.getElementById('look'), '../assets/look', 62);
+  look.load(true); setTimeout(()=>look.load(false), 300);
+  let target = .5, cur = .5, lastMove = 0;
+  const setFromX = x => { target = clamp(x / innerWidth, 0, 1); lastMove = performance.now(); };
+  addEventListener('pointermove', e => setFromX(e.clientX), {passive:true});
+  addEventListener('touchmove', e => { if(e.touches[0]) setFromX(e.touches[0].clientX); }, {passive:true});
+  addEventListener('touchstart', e => { if(e.touches[0]) setFromX(e.touches[0].clientX); }, {passive:true});
+  const hint = document.getElementById('hint');
+  if(matchMedia('(hover: none)').matches) hint.textContent = 'Érintsd meg a képernyőt, és Spark rád néz.';
+  function lookLoop(now){
+    if(!reduce && now - lastMove > 2600) target = .5 + Math.sin(now / 2600) * .42;  // idle: Spark gazes slowly around the room
+    cur += (target - cur) * (reduce ? 1 : .08);
+    look.draw(Math.round(cur * (look.count - 1)));
+    requestAnimationFrame(lookLoop);
+  }
+  if(reduce){ target = .5; } requestAnimationFrame(lookLoop);
+
+  // 3 · shelves glide upward with the scroll
+  const glideSec = document.querySelector('.glide');
+  const glide = sequence(document.getElementById('glideCanvas'), '../assets/glide', 61);
+  const capA = document.getElementById('capA'), capB = document.getElementById('capB');
+  new IntersectionObserver(es => { if(es[0].isIntersecting) glide.load(false); }, {rootMargin:'900px 0px'}).observe(glideSec);
+  function onScroll(){
+    bar.classList.toggle('solid', scrollY > 40);
+    const r = glideSec.getBoundingClientRect(), p = clamp(-r.top / (r.height - innerHeight), 0, 1);
+    glide.draw(Math.round((reduce ? .5 : p) * (glide.count - 1)));
+    capA.classList.toggle('off', p > .45); capB.classList.toggle('off', p < .55);
+  }
+  addEventListener('scroll', () => requestAnimationFrame(onScroll), {passive:true}); onScroll();
+
+  // gentle reveals, visible by default if observers are missing
+  if(!reduce && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    document.querySelectorAll('.slide').forEach((el, i) => { if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('pre'); el.style.transitionDelay = (i % 3) * 120 + 'ms'; io.observe(el); } });
+  }
+
+  // remember the chosen language
+  document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { try{ localStorage.setItem('lang', a.hreflang); }catch(e){} }));
+  // Spark speaks: one line per tap, never on its own
+  let voice = null, speaker = null;
+  function hush(){ if(voice){ voice.pause(); } if(speaker){ speaker.classList.remove('speaking'); } }
+  document.querySelectorAll('.say').forEach(b => {
+    const bub = b.querySelector('.bubble');
+    b.addEventListener('click', () => {
+      const again = speaker === b && b.classList.contains('speaking');
+      hush(); if(again){ speaker = null; return; }
+      document.querySelectorAll('.say.done').forEach(x => x.classList.remove('done'));
+      bub.textContent = b.dataset.text; speaker = b;
+      b.classList.add('speaking');
+      const finish = () => { b.classList.remove('speaking'); b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 2500); };
+      if(!b.dataset.clip){ voice = null; setTimeout(() => { if(speaker === b) finish(); }, 2200); return; }  // bubble only, no sound
+      voice = new Audio(b.dataset.clip);
+      voice.onended = finish;
+      voice.play().catch(finish);
+    });
+  });
+})();
+</script>
+<script data-goatcounter="https://sparkandlilystories.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

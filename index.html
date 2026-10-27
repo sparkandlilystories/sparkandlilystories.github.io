@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>try{var l=localStorage.getItem('lang');if(!l&&/^hu\b/i.test(navigator.language||'')){location.replace('/hu/');}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Little Spark Stories – Calm bedtime &amp; feelings stories for toddlers</title>
   <meta name="description" content="Calm, gentle bedtime stories and first feelings books for little ones aged 2–5, with Spark, Lily, Luna and Snowy. British narration, one feeling at a time. Free book, picture books and videos.">
@@ -18,6 +19,8 @@
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="alternate" hreflang="en" href="https://sparkandlilystories.github.io/">
+  <link rel="alternate" hreflang="hu" href="https://sparkandlilystories.github.io/hu/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +52,12 @@ p{margin:0}
 .skip{position:absolute; left:-999px; top:8px}
 .skip:focus{left:12px; z-index:20; background:var(--ink); color:var(--night); padding:10px 14px; border-radius:8px}
 
+.lang{display:flex; gap:2px; padding:3px; border-radius:999px; box-shadow:inset 0 0 0 1.5px rgba(251,243,228,.35); font:600 13px/1 var(--body); margin-left:auto}
+.lang a{text-decoration:none; color:var(--muted); padding:8px 10px; border-radius:999px}
+.lang a[aria-current]{background:rgba(246,185,95,.2); color:var(--glow)}
+.lang a:hover{color:var(--glow)}
+.bar .name{white-space:nowrap}
+@media (max-width:480px){.bar{gap:8px}.bar .name{font-size:15px; gap:7px}.bar .btn{padding:10px 14px; font-size:13px}.lang a{padding:7px 8px}}
 /* top bar */
 body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--night)}
 .bar{position:fixed; top:env(safe-area-inset-top,0px); left:0; right:0; z-index:9; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px var(--gut-r) 14px var(--gut); transition:background .3s}
@@ -58,8 +67,9 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .bar nav{display:flex; gap:22px; font:600 15px/1 var(--body)}
 .bar nav a{text-decoration:none; color:var(--muted)}
 .bar nav a:hover{color:var(--glow)}
-.bar .btn{padding:12px 18px; font-size:14px}
+.bar .btn{padding:12px 18px; font-size:14px; white-space:nowrap}
 @media (max-width:820px){.bar nav{display:none}}
+@media (max-width:374px){.bar .name{font-size:0; gap:0}.bar .name i{width:18px; height:18px}}
 
 /* 1 · hero: Spark looks wherever you are */
 .hero{position:relative; height:100vh; height:100svh; min-height:560px; overflow:hidden; background:#1b1220}
@@ -197,6 +207,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
 <header class="bar" id="bar">
   <a class="name" href="#top"><i aria-hidden="true"></i>Little Spark Stories</a>
   <nav aria-label="Sections"><a href="#tale">Spark’s story</a><a href="#books">Books</a><a href="#friends">Friends</a><a href="#barbara">About me</a></nav>
+  <div class="lang" role="navigation" aria-label="Language / Nyelv"><a href="/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/hu/" hreflang="hu" lang="hu">HU</a></div>
   <a class="btn" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener">Free book</a>
 </header>
 
@@ -269,7 +280,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
           <h3>A free book</h3>
           <p>Not sure yet? Start with a free book and see if your little one loves Spark as much as we do.</p>
           <a class="btn ghost" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener" style="justify-self:start">Get the free book</a>
-          <p style="margin-top:8px">🇭🇺 Magyarul is! <a href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener" style="color:var(--glow)">Ingyenes mese: Hogyan született Spark</a></p>
+          <p style="margin-top:8px">🇭🇺 Magyarul is! <a href="/hu/" hreflang="hu" style="color:var(--glow)">Spark oldala magyarul</a></p>
           <a class="btn ghost" href="https://payhip.com/LittleSparkStories" target="_blank" rel="noopener" style="justify-self:start">Browse all books</a>
         </div>
       </div>
@@ -409,6 +420,9 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
     const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
     document.querySelectorAll('.slide').forEach((el, i) => { if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('pre'); el.style.transitionDelay = (i % 3) * 120 + 'ms'; io.observe(el); } });
   }
+
+  // remember the chosen language
+  document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { try{ localStorage.setItem('lang', a.hreflang); }catch(e){} }));
   // Spark speaks: one line per tap, never on its own
   let voice = null, speaker = null;
   function hush(){ if(voice){ voice.pause(); } if(speaker){ speaker.classList.remove('speaking'); } }
@@ -419,10 +433,12 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
       hush(); if(again){ speaker = null; return; }
       document.querySelectorAll('.say.done').forEach(x => x.classList.remove('done'));
       bub.textContent = b.dataset.text; speaker = b;
-      voice = new Audio(b.dataset.clip);
       b.classList.add('speaking');
-      voice.onended = () => { b.classList.remove('speaking'); b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 2500); };
-      voice.play().catch(() => { b.classList.remove('speaking'); b.classList.add('done'); });
+      const finish = () => { b.classList.remove('speaking'); b.classList.add('done'); setTimeout(() => b.classList.remove('done'), 2500); };
+      if(!b.dataset.clip){ voice = null; setTimeout(() => { if(speaker === b) finish(); }, 2200); return; }  // bubble only, no sound
+      voice = new Audio(b.dataset.clip);
+      voice.onended = finish;
+      voice.play().catch(finish);
     });
   });
 })();
