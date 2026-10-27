@@ -120,6 +120,10 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .book .tag{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--amber)}
 .book .go{font:600 14px/1 var(--body); color:var(--amber)}
 .plank{height:18px; border-radius:6px; background:linear-gradient(180deg,#8a5a3a,#5c3a26); box-shadow:0 14px 30px -10px rgba(0,0,0,.8), inset 0 2px 0 rgba(255,220,170,.25); margin-top:-6px}
+.shelf.four{grid-template-columns:repeat(4,1fr)}
+.shelf.four .book h3{font-size:19px}
+@media (max-width:900px){.shelf.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.shelf.four{grid-template-columns:1fr}}
 .slide{transition:opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1)}
 .slide.pre{opacity:.001; transform:translateY(26px) scale(.97)}
 @media (max-width:900px){.shelf{grid-template-columns:repeat(2,1fr)}}
@@ -260,8 +264,9 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
         <a class="book slide" href="https://payhip.com/b/BebcF" target="_blank" rel="noopener"><div class="cover"><img src="assets/books-sorry.jpg" alt="Cover of Spark Says Sorry, with a peek at a page inside" loading="lazy"></div><h3>Spark Says Sorry</h3><div class="meta"><span>A gentle story about saying sorry</span><span class="price">£2.99</span></div><span class="tag">Also in the 5-book bundle</span><span class="go">See the book →</span></a>
       </div>
       <div class="plank" aria-hidden="true"></div>
-      <div class="shelf" style="margin-top:44px">
+      <div class="shelf four" style="margin-top:44px">
         <a class="book slide" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><div class="cover"><img src="assets/books-snow.jpg" alt="Cover of Spark and the First Snow, with a peek at a page inside" loading="lazy"></div><h3>Spark and the First Snow</h3><div class="meta"><span>English, Hungarian &amp; bilingual</span><span class="price">£3.99</span></div><span class="tag">Also in the 5-book bundle</span><span class="go">See the book →</span></a>
+        <a class="book slide" href="https://payhip.com/b/PBQpJ" target="_blank" rel="noopener"><div class="cover"><img src="assets/books-tot.jpg" alt="Cover of Spark's First Trick or Treat, with a peek at a page inside" loading="lazy"></div><h3>Spark’s First Trick or Treat</h3><div class="meta"><span>Wobbly and brave at the same time</span><span class="price">£2.99</span></div><span class="tag">New for Halloween</span><span class="go">See the book →</span></a>
         <a class="book slide" href="https://payhip.com/b/Rxqm1" target="_blank" rel="noopener"><div class="cover"><img src="assets/books-halloween.jpg" alt="Cover of Spark's First Halloween, with a peek at a page inside" loading="lazy"></div><h3>Spark’s First Halloween</h3><div class="meta"><span>A gentle, not-scary story about shadows</span><span class="price">£2.99</span></div><span class="tag">Also in the 5-book bundle</span><span class="go">See the book →</span></a>
         <a class="book slide" href="https://payhip.com/b/2PoYK" target="_blank" rel="noopener"><div class="cover"><img src="assets/books-christmas.jpg" alt="Cover of Spark's Christmas Countdown, with a peek at a page inside" loading="lazy"></div><h3>Spark’s Christmas Countdown</h3><div class="meta"><span>24 little words for December</span><span class="price">£4.99</span></div><span class="tag" style="visibility:hidden">·</span><span class="go">See the book →</span></a>
       </div>

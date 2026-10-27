@@ -124,6 +124,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 .shelf.four .book h3{font-size:19px}
 .book.soon .cover img{filter:saturate(.75) brightness(.85)}
 @media (max-width:900px){.shelf.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.shelf.four{grid-template-columns:1fr}}
 .slide{transition:opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1)}
 .slide.pre{opacity:.001; transform:translateY(26px) scale(.97)}
 @media (max-width:900px){.shelf{grid-template-columns:repeat(2,1fr)}}
@@ -258,9 +259,10 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
         <p>A képeskönyvekkel Spark, Lily, Luna és Hóbuci is ott lehet az esti mesélésnél. Egyszerű szavak és puha képek, amelyeket együtt nézegethettek.</p>
         <div class="say-row"><button class="say" type="button" data-clip="../assets/voice/hu/books.mp3" data-text="Nahát, nézd! Ezek mind az én meséim. Melyiket olvassuk ma este?"><i class="orb" aria-hidden="true"></i><span class="lbl">Mit mond Spark?</span><span class="bubble" aria-live="polite"></span></button></div>
       </div>
-      <div class="shelf">
+      <div class="shelf four">
         <a class="book slide" href="https://payhip.com/b/M8RCV" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-born-hu.jpg" alt="A Hogyan született Spark borítója és egy belső oldala" loading="lazy"></div><h3>Hogyan született Spark</h3><div class="meta"><span>Az első mese, magyarul és kétnyelvűen</span><span class="price">Ingyenes</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Letöltöm →</span></a>
         <a class="book slide" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-snow-hu.jpg" alt="A Spark és az első hó borítója és egy belső oldala" loading="lazy"></div><h3>Spark és az első hó</h3><div class="meta"><span>Magyarul, angolul és kétnyelvűen</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
+        <a class="book slide" href="https://payhip.com/b/TkN7O" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-tot-hu.jpg" alt="A Spark és a bátor kis tök borítója és egy belső oldala" loading="lazy"></div><h3>Spark és a bátor kis tök</h3><div class="meta"><span>Halloweeni mese a bátorságról</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója és egy belső oldala" loading="lazy"></div><h3>Spark adventi naptára</h3><div class="meta"><span>24 kis szó decemberre</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Új! Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
       </div>
       <div class="plank" aria-hidden="true"></div>
