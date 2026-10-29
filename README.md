@@ -1,8 +1,8 @@
-# sparkandlilystories.github.io
+# sparkandlilystories.com
 
 The home page for **Little Spark Stories** – calm, gentle, AI-animated bedtime stories for little ones aged 2–5, with Spark, Lily, Luna and Snowy.
 
-Live at: https://sparkandlilystories.github.io
+Live at: https://sparkandlilystories.com
 
 It is a simple one-page site (`index.html` + `style.css`) used as a link-in-bio page for Instagram, YouTube and TikTok. We use a simple, privacy-friendly visitor counter ([GoatCounter](https://www.goatcounter.com)). No cookies, no personal data, no tracking.
 
