@@ -213,7 +213,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
   <a class="name" href="#top"><i aria-hidden="true"></i>Little Spark Stories</a>
   <nav aria-label="Sections"><a href="#tale">Spark’s story</a><a href="#books">Books</a><a href="#friends">Friends</a><a href="#barbara">About me</a></nav>
   <div class="lang" role="navigation" aria-label="Language / Nyelv"><a href="/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/hu/" hreflang="hu" lang="hu">HU</a></div>
-  <a class="btn" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener">Free book</a>
+  <a class="btn" href="/free/How-Spark-Was-Born.pdf" download>Free book</a>
 </header>
 
 <main id="top">
@@ -223,7 +223,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
       <h1>Little <span>Spark</span> Stories</h1>
       <p class="sub">Calm, gentle stories for little ones.</p>
       <div class="row">
-        <a class="btn" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener">Get the free book</a>
+        <a class="btn" href="/free/How-Spark-Was-Born.pdf" download>Get the free book</a>
         <a class="btn ghost" href="https://payhip.com/LittleSparkStories" target="_blank" rel="noopener">Visit the shop</a>
       </div>
       <button class="say" type="button" data-clip="assets/voice/hello.mp3" data-text="Hello! I’m Spark. I was born right here, in this library. Shall we find a story together?"><i class="orb" aria-hidden="true"></i><span class="lbl">Say hello to Spark</span><span class="bubble" aria-live="polite"></span></button>
@@ -285,7 +285,8 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
           <span class="kicker">Start here</span>
           <h3>A free book</h3>
           <p>Not sure yet? Start with a free book and see if your little one loves Spark as much as we do.</p>
-          <a class="btn ghost" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener" style="justify-self:start">Get the free book</a>
+          <a class="btn ghost" href="/free/How-Spark-Was-Born.pdf" download style="justify-self:start">Get the free book</a>
+          <p class="small" style="margin-top:6px">Instant PDF download, no email needed. Prefer EPUB? <a href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener" style="color:var(--glow)">Get it on Payhip</a></p>
           <p style="margin-top:8px">🇭🇺 Magyarul is! <a href="/hu/" hreflang="hu" style="color:var(--glow)">Spark oldala magyarul</a></p>
           <a class="btn ghost" href="https://payhip.com/LittleSparkStories" target="_blank" rel="noopener" style="justify-self:start">Browse all books</a>
         </div>
@@ -350,7 +351,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
       <h2>Where will Spark go tonight?</h2>
       <p>Start with a free story tonight, or settle in with the 5-book bundle for a whole week of calm bedtimes.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-        <a class="btn" href="https://payhip.com/b/tYE8N" target="_blank" rel="noopener">Get the free book</a>
+        <a class="btn" href="/free/How-Spark-Was-Born.pdf" download>Get the free book</a>
         <a class="btn ghost" href="https://payhip.com/b/sWNVH" target="_blank" rel="noopener">Get the bundle</a>
       </div>
     </div>
@@ -361,7 +362,7 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
   <div class="wrap">
     <p>© Little Spark Stories · Made with love and a little AI</p>
     <p>Questions or ideas? Write to me at <a href="mailto:innovabizpro@gmail.com">innovabizpro@gmail.com</a></p>
-    <p class="small">This site uses a privacy-friendly visitor counter: no cookies, no personal data, no tracking. Downloads and purchases are handled by Payhip.</p>
+    <p class="small">This site uses a privacy-friendly visitor counter: no cookies, no personal data, no tracking. The free book downloads straight from this site; purchases are handled by Payhip.</p>
     <p><a href="#top">Back to top ↑</a></p>
   </div>
 </footer>
@@ -450,5 +451,20 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
 })();
 </script>
 <script data-goatcounter="https://sparkandlilystories.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+/* Count clicks on buttons and outgoing links (GoatCounter events, no cookies) */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a || !window.goatcounter || !window.goatcounter.count) return;
+  var h = a.getAttribute('href') || '';
+  var name = null;
+  if (/\.pdf$/i.test(h)) name = 'download-' + h.split('/').pop().replace(/\.pdf$/i, '');
+  else if (/payhip\.com/i.test(h)) name = 'payhip-' + (h.split('/').pop() || 'shop');
+  else if (/^https?:/i.test(h)) { try { name = 'out-' + new URL(h).hostname.replace(/^www\./, ''); } catch (x) {} }
+  if (!name) return;
+  var where = a.closest('header') ? 'header' : a.closest('.hero') ? 'hero' : a.closest('.offers') ? 'offers' : a.closest('.book') ? 'books' : a.closest('footer') ? 'footer' : 'page';
+  window.goatcounter.count({ path: name + '@' + where, title: (a.textContent || '').trim().slice(0, 60), event: true });
+});
+</script>
 </body>
 </html>
