@@ -206,6 +206,14 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
 @media (min-width:900px){.hero .bubble{left:calc(50% + 330px); bottom:calc(100% + 170px); text-align:left}.hero .bubble::after{left:10px; margin-left:0; border-top-color:var(--paper); transform:skewX(30deg)}}
 .say-row{display:flex; justify-content:center; margin-top:18px}
 @media (prefers-reduced-motion: reduce){.say.speaking .orb{animation:none; box-shadow:0 0 24px 7px rgba(255,220,160,.75)}}
+
+/* seasonal banner (Nov–Dec) – remove in January */
+.xmas{background:linear-gradient(180deg,#141a3d 0%,var(--night) 100%);padding:clamp(28px,5vw,48px) 0}
+.xmas-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,40px);align-items:center;max-width:860px;margin:0 auto;padding:clamp(18px,3vw,28px);border-radius:24px;background:rgba(246,185,95,.07);box-shadow:inset 0 0 0 1px var(--line),0 0 60px -20px rgba(246,185,95,.45)}
+.xmas-card img{width:clamp(120px,22vw,200px);height:auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);display:block}
+.xmas-card h2{font-size:clamp(26px,3.6vw,40px);margin:10px 0 8px}
+.xmas-card p{color:var(--muted);margin:0 0 18px}
+@media (max-width:560px){.xmas-card{grid-template-columns:1fr;text-align:center;justify-items:center}}
 </style>
 </head>
 <body>
@@ -232,6 +240,21 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
     </div>
   </section>
 
+  <section class="xmas" aria-label="Spark adventi naptára">
+    <div class="wrap">
+      <div class="xmas-card">
+        <img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója" loading="lazy">
+        <div>
+          <span class="kicker">Közeleg a karácsony ✨</span>
+          <h2>Spark adventi naptára</h2>
+          <p>24 kis mese decemberre, minden reggelre egy · <strong style="color:var(--glow)">£3.99</strong></p>
+          <a class="btn" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener">Megnézem a könyvet →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section class="tale" id="tale">
     <div class="wrap grid">
       <figure class="slide"><img src="../assets/spark-first-eyes.jpg" alt="Spark először nyitja ki a szemét egy nyitott könyv fölött a holdfényes könyvtárban" loading="lazy"></figure>
@@ -255,20 +278,21 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
   <section class="shelf-sec" id="books">
     <div class="wrap">
       <div class="shelf-head">
+        
         <span class="kicker">Képeskönyvek</span>
         <h2>Spark könyvespolca</h2>
         <p>A képeskönyvekkel Spark, Lily, Luna és Hóbuci is ott lehet az esti mesélésnél. Egyszerű szavak és puha képek, amelyeket együtt nézegethettek.</p>
         <div class="say-row"><button class="say" type="button" data-clip="../assets/voice/hu/books.mp3" data-text="Nahát, nézd! Ezek mind az én meséim. Melyiket olvassuk ma este?"><i class="orb" aria-hidden="true"></i><span class="lbl">Mit mond Spark?</span><span class="bubble" aria-live="polite"></span></button></div>
       </div>
       <div class="shelf four">
+        <a class="book slide" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója és egy belső oldala" loading="lazy"></div><h3>Spark adventi naptára</h3><div class="meta"><span>24 kis szó decemberre</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Új! Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="/free/Hogyan-szuletett-Spark.pdf" download><div class="cover"><img src="../assets/books-born-hu.jpg" alt="A Hogyan született Spark borítója és egy belső oldala" loading="lazy"></div><h3>Hogyan született Spark</h3><div class="meta"><span>Az első mese, magyarul és kétnyelvűen</span><span class="price">Ingyenes</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Letöltöm →</span></a>
         <a class="book slide" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-snow-hu.jpg" alt="A Spark és az első hó borítója és egy belső oldala" loading="lazy"></div><h3>Spark és az első hó</h3><div class="meta"><span>Magyarul, angolul és kétnyelvűen</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="https://payhip.com/b/TkN7O" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-tot-hu.jpg" alt="A Spark és a bátor kis tök borítója és egy belső oldala" loading="lazy"></div><h3>Spark és a bátor kis tök</h3><div class="meta"><span>Halloweeni mese a bátorságról</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
-        <a class="book slide" href="https://payhip.com/b/SG4Z6" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-halloween-hu.jpg" alt="A Spark első Halloweenje borítója és egy belső oldala" loading="lazy"></div><h3>Spark első Halloweenje</h3><div class="meta"><span>Nem ijesztő mese az árnyékokról</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
       </div>
       <div class="plank" aria-hidden="true"></div>
       <div class="shelf four" style="margin-top:44px">
-        <a class="book slide" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója és egy belső oldala" loading="lazy"></div><h3>Spark adventi naptára</h3><div class="meta"><span>24 kis szó decemberre</span><span class="price">£3.99</span></div><span class="tag">🇭🇺 Új! Magyarul olvasható</span><span class="go">Megnézem a könyvet →</span></a>
+        <a class="book slide" href="https://payhip.com/b/SG4Z6" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-halloween-hu.jpg" alt="A Spark első Halloweenje borítója és egy belső oldala" loading="lazy"></div><h3>Spark első Halloweenje</h3><div class="meta"><span>Nem ijesztő mese az árnyékokról</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="https://payhip.com/b/3FpPA" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-rainbow-hu.jpg" alt="A Spark és a szivárvány borítója és egy belső oldala" loading="lazy"></div><h3>Spark és a szivárvány</h3><div class="meta"><span>Tanuljuk a színeket</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="https://payhip.com/b/ztinl" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-count-hu.jpg" alt="A Spark számolni tanul borítója és egy belső oldala" loading="lazy"></div><h3>Spark számolni tanul</h3><div class="meta"><span>Számolj ötig</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
         <a class="book slide" href="https://payhip.com/b/miI9b" target="_blank" rel="noopener"><div class="cover"><img src="../assets/books-sorry-hu.jpg" alt="A Spark bocsánatot kér borítója és egy belső oldala" loading="lazy"></div><h3>Spark bocsánatot kér</h3><div class="meta"><span>Szelíd mese a bocsánatkérésről</span><span class="price">£2.99</span></div><span class="tag">🇭🇺 Új! Magyarul és kétnyelvűen</span><span class="go">Megnézem a könyvet →</span></a>
@@ -465,7 +489,7 @@ document.addEventListener('click', function (e) {
   else if (/payhip\.com/i.test(h)) name = 'payhip-' + (h.split('/').pop() || 'shop');
   else if (/^https?:/i.test(h)) { try { name = 'out-' + new URL(h).hostname.replace(/^www\./, ''); } catch (x) {} }
   if (!name) return;
-  var where = a.closest('header') ? 'header' : a.closest('.hero') ? 'hero' : a.closest('.offers') ? 'offers' : a.closest('.book') ? 'books' : a.closest('footer') ? 'footer' : 'page';
+  var where = a.closest('header') ? 'header' : a.closest('.hero') ? 'hero' : a.closest('.xmas') ? 'xmas' : a.closest('.offers') ? 'offers' : a.closest('.book') ? 'books' : a.closest('footer') ? 'footer' : 'page';
   window.goatcounter.count({ path: name + '@' + where, title: (a.textContent || '').trim().slice(0, 60), event: true });
 });
 </script>
