@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spark and the First Snow – a gentle winter picture book for ages 2–5</title>
+<meta name="description" content="Lily, her bunny Luna and Spark discover snow for the first time: a snowflake, snow angels, a snowman called Snowy and warm cocoa. A calm winter picture book for ages 2–5, in English, Hungarian and bilingual.">
+<meta name="theme-color" content="#0e1330">
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="Little Spark Stories">
+<meta property="og:title" content="Spark and the First Snow">
+<meta property="og:description" content="Lily, her bunny Luna and Spark discover snow for the first time: a snowflake, snow angels, a snowman called Snowy and warm cocoa. A calm winter picture book for ages 2–5, in English, Hungarian and bilingual.">
+<meta property="og:image" content="https://sparkandlilystories.com/assets/snow/og-first-snow.jpg">
+<meta property="og:image:alt" content="Lily making a snow angel next to Spark and its tiny glowing snow angel">
+<meta property="og:url" content="https://sparkandlilystories.com/first-snow/">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sparkandlilystories.com/first-snow/">
+<link rel="alternate" hreflang="en" href="https://sparkandlilystories.com/first-snow/">
+<link rel="alternate" hreflang="hu" href="https://sparkandlilystories.com/hu/elso-ho/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preload" as="image" href="/assets/snow/bg.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Book", "name": "Spark and the First Snow", "inLanguage": ["en", "hu"], "author": {"@type": "Person", "name": "Mrs Digital"}, "publisher": {"@type": "Organization", "name": "Little Spark Stories"}, "typicalAgeRange": "2-5", "image": "https://sparkandlilystories.com/assets/snow/og-first-snow.jpg", "url": "https://sparkandlilystories.com/first-snow/", "offers": {"@type": "Offer", "price": "3.99", "priceCurrency": "GBP", "url": "https://payhip.com/b/gohmR", "availability": "https://schema.org/InStock"}}</script>
+<style>
+/* Layout: the snow-angel page from book 2, lifted into a living scene, then the book on the site's night sky. Single night look, matching the home page. */
+:root{
+  --night:#0e1330; --night-2:#18204a; --ink:#fbf3e4; --muted:#bfc4de; --amber:#f6b95f; --glow:#ffdca0; --paper:#f7eedf; --paper-ink:#3a2e2a; --line:rgba(246,185,95,.28);
+  --display:"Fredoka","Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito Sans","Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px)); --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  --barh:64px;
+  color-scheme:dark; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0; background:var(--night); color:var(--ink); font:400 17px/1.65 var(--body); -webkit-font-smoothing:antialiased; overflow-x:clip}
+img{max-width:100%; display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--glow); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1040px; margin:0 auto; padding-left:var(--gut); padding-right:var(--gut-r)}
+h1,h2,h3{font-family:var(--display); font-weight:500; line-height:1.05; margin:0; text-wrap:balance}
+p{margin:0}
+.kicker{font:600 13px/1 var(--body); letter-spacing:.18em; text-transform:uppercase; color:var(--amber)}
+.btn{display:inline-flex; align-items:center; gap:10px; font:600 16px/1 var(--body); text-decoration:none; padding:16px 24px; border-radius:999px; background:var(--amber); color:#2a1d10; transition:transform .25s, box-shadow .25s, background .25s}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 30px -8px rgba(246,185,95,.7); background:var(--glow)}
+.btn.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 2px rgba(251,243,228,.5)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--glow); color:var(--glow)}
+.skip{position:absolute; left:-999px; top:8px}
+.skip:focus{left:12px; z-index:20; background:var(--ink); color:var(--night); padding:10px 14px; border-radius:8px}
+
+/* top bar, same as the home page */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--night)}
+.bar{position:fixed; top:env(safe-area-inset-top,0px); left:0; right:0; z-index:9; height:var(--barh); display:flex; align-items:center; gap:14px; padding:0 var(--gut-r) 0 var(--gut); background:rgba(14,19,48,.9); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px)}
+.bar .name{font:600 20px/1 var(--display); text-decoration:none; display:flex; align-items:center; gap:10px; white-space:nowrap}
+.bar .name i{width:14px; height:14px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #fff4d6, var(--amber) 55%, rgba(246,185,95,0) 75%); box-shadow:0 0 16px 4px rgba(246,185,95,.55); display:block}
+.bar .back{font:600 15px/1 var(--body); color:var(--muted); text-decoration:none; white-space:nowrap}
+.bar .back:hover{color:var(--glow)}
+.lang{display:flex; gap:2px; padding:3px; border-radius:999px; box-shadow:inset 0 0 0 1.5px rgba(251,243,228,.35); font:600 13px/1 var(--body); margin-left:auto}
+.lang a{text-decoration:none; color:var(--muted); padding:8px 10px; border-radius:999px}
+.lang a[aria-current]{background:rgba(246,185,95,.2); color:var(--glow)}
+.bar .btn{padding:12px 18px; font-size:14px; white-space:nowrap}
+@media (max-width:640px){.bar .name{display:none}}
+@media (max-width:400px){.bar{gap:8px}.bar .btn{padding:10px 13px; font-size:13px}.lang a{padding:7px 8px}}
+
+/* scene */
+.stage{position:relative; margin-top:calc(var(--barh) + env(safe-area-inset-top,0px)); width:100%; height:min(56.2vw, calc(76vh - var(--barh))); min-height:min(380px, 66vh); overflow:hidden; background:#e9f0f9; touch-action:pan-y}
+.world{position:absolute; left:50%; top:50%; aspect-ratio:2400/1325; transform-origin:50% 50%; will-change:transform}
+.layer{position:absolute; display:block; max-width:none; pointer-events:none; user-select:none; -webkit-user-select:none; will-change:transform}
+.bg,.frame{left:0; top:0; width:100%; height:100%}
+.lily{left:19%; top:8.075%; width:44.292%}
+.bunny{left:50.667%; top:34.34%; width:10.708%}
+.spark{left:66%; top:28.075%; width:13.083%; pointer-events:auto; cursor:pointer; -webkit-tap-highlight-color:transparent; background:none; border:0; padding:0}
+.spark img{width:100%; display:block; animation:pulse 3.2s ease-in-out infinite}
+.spark.hop img{animation:pulse 3.2s ease-in-out infinite, hop .7s cubic-bezier(.3,1.6,.5,1)}
+.spark:focus-visible{outline-offset:-4px; border-radius:50%}
+@keyframes hop{0%{transform:none}35%{transform:translateY(-28%) scale(1.08,.94)}70%{transform:translateY(4%) scale(.96,1.05)}100%{transform:none}}
+@keyframes pulse{0%,100%{filter:drop-shadow(0 0 6px rgba(255,200,90,.55)) brightness(1)}50%{filter:drop-shadow(0 0 22px rgba(255,200,90,.95)) brightness(1.08)}}
+.glowline{left:64%; top:51.02%; width:15%;
+  -webkit-mask-image:conic-gradient(from 200deg,#000 var(--reveal),transparent calc(var(--reveal) + 8deg));
+          mask-image:conic-gradient(from 200deg,#000 var(--reveal),transparent calc(var(--reveal) + 8deg));
+  animation:draw 9s .6s cubic-bezier(.45,.1,.3,1) infinite both}
+@property --reveal{syntax:"<angle>"; inherits:false; initial-value:0deg}
+@keyframes draw{0%{--reveal:0deg;opacity:1}32%{--reveal:368deg;opacity:1}55%{opacity:.75}70%{opacity:1}88%{--reveal:368deg;opacity:1}100%{--reveal:368deg;opacity:0}}
+canvas.snowfall{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+.bubble{position:absolute; left:0; top:0; z-index:3; max-width:min(260px,64vw); padding:12px 16px; border-radius:18px; background:var(--paper); color:var(--paper-ink); font:500 16px/1.3 var(--display); box-shadow:0 10px 30px -10px rgba(14,19,48,.45); opacity:0; transform:translate(-50%,-100%) translateY(8px) scale(.96); transition:opacity .25s, transform .25s; pointer-events:none}
+.bubble::after{content:""; position:absolute; left:50%; bottom:-7px; width:14px; height:14px; background:var(--paper); transform:translateX(-50%) rotate(45deg); border-radius:3px}
+.bubble.on{opacity:1; transform:translate(-50%,-100%) translateY(-6px) scale(1)}
+.hint{position:absolute; left:50%; bottom:16px; transform:translateX(-50%); z-index:2; font:600 13px/1 var(--body); color:#25335a; background:rgba(255,255,255,.78); padding:9px 14px; border-radius:999px; -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); transition:opacity .6s; white-space:nowrap}
+
+/* book */
+.book{padding-block:56px 72px}
+.book-grid{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:48px; align-items:start}
+.book h1{font-size:clamp(38px,6vw,64px); margin:14px 0 10px}
+.alt{color:var(--muted); font-size:16px; margin-bottom:24px}
+.lede{max-width:60ch; margin-bottom:14px}
+.lede + .lede{color:var(--muted)}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:24px 0 28px; padding:0; list-style:none}
+.chips li{font:600 14px/1 var(--body); padding:9px 14px; border-radius:999px; box-shadow:inset 0 0 0 1.5px var(--line); color:var(--glow)}
+.actions{display:flex; flex-wrap:wrap; gap:12px}
+.note{margin-top:14px; font-size:14px; color:var(--muted); max-width:52ch}
+.page{background:var(--paper); color:var(--paper-ink); border-radius:6px 18px 18px 6px; padding:28px 28px 22px; box-shadow:0 30px 60px -30px rgba(0,0,0,.6), inset 6px 0 0 rgba(58,46,42,.06); transform:rotate(1.2deg); margin-top:12px}
+.page blockquote{margin:0; font:500 clamp(20px,2.4vw,24px)/1.4 var(--display)}
+.page blockquote em{color:#a0601a; font-style:normal}
+.page figcaption{margin-top:16px; font:600 12px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:#8a7466; display:flex; justify-content:space-between}
+@media (max-width:820px){.book-grid{grid-template-columns:1fr; gap:36px}.page{transform:none}}
+
+.inside{padding-block:8px 72px}
+.inside h2{font-size:clamp(26px,3.4vw,34px); margin-bottom:22px}
+.pages{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin:0; padding:0; list-style:none}
+.pages li{display:grid; gap:10px; align-content:start}
+.pages img{border-radius:14px; aspect-ratio:720/395; object-fit:cover; width:100%; height:auto}
+.pages span{font-size:14px; color:var(--muted); line-height:1.45}
+@media (max-width:820px){.pages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.more{border-top:1px solid var(--line); padding-block:44px; display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center; justify-content:space-between}
+.more h2{font-size:clamp(22px,3vw,28px)}
+footer{background:#0a0e24; color:var(--muted); font-size:15px; padding-block:36px 52px}
+footer .wrap{display:grid; gap:10px}
+footer a{color:var(--glow)}
+footer .small{font-size:13px; opacity:.85; max-width:70ch}
+@media (prefers-reduced-motion:reduce){.glowline{animation:none; --reveal:368deg}.spark img{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to the book</a>
+<header class="bar">
+  <a class="name" href="/"><i aria-hidden="true"></i>Little Spark Stories</a>
+  <a class="back" href="/#books">← All books</a>
+  <div class="lang" role="navigation" aria-label="Language / Nyelv"><a href="/first-snow/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/hu/elso-ho/" hreflang="hu" lang="hu">HU</a></div>
+  <a class="btn" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener">Get the book</a>
+</header>
+
+<main>
+<section class="stage" id="stage" aria-label="Lily and Spark making snow angels" data-page="en" data-hint-touch="Tap Spark ✦" data-lines='["Oh! It’s cold… and sparkly!", "I made a tiny, glowing snow angel too!", "Swish, swish! Now it’s your turn!", "Every snowflake is different, just like every friend."]'>
+  <div class="world" id="world">
+    <img class="layer bg" data-d="0.25" src="/assets/snow/bg.webp" alt="" fetchpriority="high">
+    <img class="layer glowline" data-d="0.3" src="/assets/snow/glow.webp" alt="">
+    <img class="layer bunny" data-d="0.55" src="/assets/snow/bunny.webp" alt="">
+    <img class="layer lily" data-d="0.7" src="/assets/snow/lily.webp" alt="Lily lying in the snow making a snow angel, with her bunny Luna beside her">
+    <button class="layer spark" data-d="1.05" id="spark" type="button" aria-label="Tap Spark"><img src="/assets/snow/spark.webp" alt=""></button>
+    <img class="layer frame" data-d="1.5" src="/assets/snow/frame.webp" alt="">
+  </div>
+  <canvas class="snowfall" id="snow" aria-hidden="true"></canvas>
+  <p class="bubble" id="bubble" aria-live="polite"></p>
+  <span class="hint" id="hint">Move over the snow · tap Spark</span>
+</section>
+
+<section class="book wrap" id="book">
+  <div class="book-grid">
+    <div>
+      <div class="kicker">Picture book · ages 2–5</div>
+      <h1>Spark and the First Snow</h1>
+      <p class="alt">Also in Hungarian: <i lang="hu">Spark és az első hó</i></p>
+      <p class="lede">One cold morning, Lily and her little grey bunny Luna run to the window. Everything is white! Spark has never seen snow before. Together they catch a special snowflake, make snow angels, roll a snowman called Snowy and warm up with cocoa by the window.</p>
+      <p class="lede">A calm first-snow story about trying new things together, with simple words, a little counting and soft pictures for bedtime.</p>
+      <ul class="chips"><li>Ages 2–5</li><li>English, Hungarian &amp; bilingual</li><li>PDF + EPUB</li><li>10 illustrated pages</li></ul>
+      <div class="actions">
+        <a class="btn" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener">Get the book · £3.99</a>
+        <a class="btn ghost" href="https://payhip.com/b/sWNVH" target="_blank" rel="noopener">5-book bundle · £9.99</a>
+      </div>
+      <p class="note">First Snow is also in the 5-book bundle with Rainbow, Count, Sorry and Halloween. Save 37%.</p>
+    </div>
+    <figure class="page" style="margin-inline:0">
+      <blockquote>Then the clouds drifted away, and the sun came out to play. Lily made a snow angel. <em>Swish, swish!</em> And Spark made a tiny, glowing one too.</blockquote>
+      <figcaption><span>Spark and the First Snow</span><span>From page 5</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="inside wrap" aria-labelledby="inside-h">
+  <h2 id="inside-h">Inside the book</h2>
+  <ul class="pages">
+<li><img src="/assets/snow/page-window.jpg" alt="Lily and Luna at the window: “It’s snowing!”" loading="lazy" width="720" height="395"><span>Lily and Luna at the window: “It’s snowing!”</span></li>
+<li><img src="/assets/snow/page-snowflake.jpg" alt="Spark catches one special snowflake" loading="lazy" width="720" height="395"><span>Spark catches one special snowflake</span></li>
+<li><img src="/assets/snow/page-snowman.jpg" alt="Roll, roll, roll! Can you count the snowballs?" loading="lazy" width="720" height="395"><span>Roll, roll, roll! Can you count the snowballs?</span></li>
+<li><img src="/assets/snow/page-cocoa.jpg" alt="Warm cocoa, and Snowy smiling at the window" loading="lazy" width="720" height="395"><span>Warm cocoa, and Snowy smiling at the window</span></li>
+  </ul>
+</section>
+
+<section class="wrap"><div class="more"><h2>More stories with Spark</h2><a class="btn ghost" href="/#books">See all books</a></div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Little Spark Stories · Made with love and a little AI</p>
+    <p class="small">This site uses a privacy-friendly visitor counter: no cookies, no personal data, no tracking. Purchases are handled by Payhip.</p>
+    <p><a href="#">Back to top ↑</a></p>
+  </div>
+</footer>
+<script>
+(()=>{
+const stage=document.getElementById('stage'),world=document.getElementById('world'),hint=document.getElementById('hint'),bubble=document.getElementById('bubble'),sparkEl=document.getElementById('spark');
+const layers=[...world.querySelectorAll('.layer')];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const COARSE=matchMedia('(pointer:coarse)').matches, IDLE=COARSE?.65:.15;
+const LINES=JSON.parse(stage.dataset.lines); let li=0, bubbleT=0;
+const R=2400/1325; let sw=0, sh=0, ox=0, ww=0;
+if(COARSE) hint.textContent=stage.dataset.hintTouch;
+function fit(){
+  sw=stage.clientWidth; sh=stage.clientHeight;
+  let w=sw, h=sw/R; if(h<sh){h=sh; w=sh*R;}
+  ww=w; world.style.width=w+'px'; world.style.height=h+'px';
+  const focus=sw<700?0.6:0.49; ox=(0.5-focus)*(w-sw);
+}
+let tx=0,ty=0,cx=0,cy=0,scrollP=0,touching=false;
+stage.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;const r=stage.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5});
+stage.addEventListener('pointerleave',()=>{tx=0;ty=0});
+stage.addEventListener('touchmove',e=>{const r=stage.getBoundingClientRect(),q=e.touches[0];tx=(q.clientX-r.left)/r.width-.5;ty=(q.clientY-r.top)/r.height-.5;touching=true},{passive:true});
+stage.addEventListener('touchend',()=>{setTimeout(()=>{tx=0;ty=0;touching=false},600)},{passive:true});
+addEventListener('scroll',()=>{scrollP=Math.min(1,Math.max(0,scrollY/(sh||1)))},{passive:true});
+addEventListener('resize',()=>{fit();sizeCanvas()}); fit();
+let burst=0;
+function poke(){
+  sparkEl.classList.remove('hop'); void sparkEl.offsetWidth; sparkEl.classList.add('hop'); burst=40;
+  hint.style.opacity=0; bubble.textContent=LINES[li++%LINES.length]; bubble.classList.add('on');
+  clearTimeout(bubbleT); bubbleT=setTimeout(()=>bubble.classList.remove('on'),3200);
+  if(window.goatcounter&&goatcounter.count) try{goatcounter.count({path:'spark-tap@'+stage.dataset.page,title:'Spark tapped',event:true})}catch(e){}
+}
+sparkEl.addEventListener('click',poke);
+const cv=document.getElementById('snow'),ctx=cv.getContext('2d');
+let flakes=[],sparks=[],dpr=1,last=0;
+function mk(any){const z=Math.random();return{x:Math.random()*sw,y:any?Math.random()*sh:-10,z,r:.8+z*3.2,v:12+z*38,ph:Math.random()*6.28}}
+function sizeCanvas(){dpr=Math.min(2,devicePixelRatio||1);cv.width=sw*dpr;cv.height=sh*dpr;flakes=Array.from({length:reduce?0:Math.round(sw*sh/9000)},()=>mk(true))}
+sizeCanvas();
+let visible=true; new IntersectionObserver(es=>{visible=es[0].isIntersecting}).observe(stage);
+const t0=performance.now();
+function frame(now){
+  requestAnimationFrame(frame); if(!visible) return;
+  const t=(now-t0)/1000, dt=Math.min(.05,t-last); last=t;
+  const ix=reduce?0:Math.sin(t*.45)*IDLE, iy=reduce?0:Math.cos(t*.33)*IDLE*.7;
+  const useX=(tx||ty)?tx:ix, useY=(tx||ty)?ty:iy;
+  cx+=(useX-cx)*.06; cy+=(useY-cy)*.06;
+  const amp=COARSE?Math.max(18,sw*.05):Math.min(28,sw*.022);
+  const sc=1.08-scrollP*.06;
+  world.style.transform=`translate(calc(-50% + ${ox.toFixed(1)}px), calc(-50% + ${(scrollP*sh*.18).toFixed(1)}px)) scale(${sc})`;
+  for(const L of layers){
+    const d=+L.dataset.d; let x=-cx*amp*d, y=-cy*amp*d;
+    if(L===sparkEl&&!reduce) y+=Math.sin(t*1.6)*ww*.012;
+    L.style.transform=`translate(${x.toFixed(2)}px,${y.toFixed(2)}px)`+(L.classList.contains('frame')?' scale(1.04)':'');
+  }
+  const st=stage.getBoundingClientRect(), sp=sparkEl.getBoundingClientRect();
+  const bx=Math.min(sw-130,Math.max(130,sp.left-st.left+sp.width/2));
+  bubble.style.left=bx+'px'; bubble.style.top=Math.max(70,sp.top-st.top)+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,sw,sh);
+  for(const f of flakes){
+    f.y+=f.v*dt; f.x+=Math.sin(t*.8+f.ph)*f.z*.6-cx*f.z*2;
+    if(f.y>sh+10)Object.assign(f,mk(false)); if(f.x<-10)f.x=sw+10; if(f.x>sw+10)f.x=-10;
+    ctx.globalAlpha=.35+f.z*.6; ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,6.283); ctx.fill();
+  }
+  if(!reduce){
+    for(let i=0;i<(burst>0?6:1);i++) if(burst>0||Math.random()<.35) sparks.push({x:sp.left-st.left+sp.width*(.2+Math.random()*.6),y:sp.top-st.top+sp.height*(.2+Math.random()*.6),vx:(Math.random()-.5)*(burst>0?160:30),vy:burst>0?-40-Math.random()*120:-10-Math.random()*25,life:1});
+    if(burst>0)burst--;
+    sparks=sparks.filter(s=>(s.life-=dt*.9)>0);
+    for(const s of sparks){s.x+=s.vx*dt;s.y+=s.vy*dt;ctx.globalAlpha=s.life;ctx.fillStyle='#ffd27a';const r=1.6*s.life+.6;ctx.beginPath();ctx.moveTo(s.x,s.y-r*2.2);ctx.lineTo(s.x+r*.6,s.y);ctx.lineTo(s.x,s.y+r*2.2);ctx.lineTo(s.x-r*.6,s.y);ctx.closePath();ctx.fill()}
+  }
+  ctx.globalAlpha=1;
+}
+requestAnimationFrame(frame);
+document.querySelectorAll('.lang a').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('lang',a.hreflang)}catch(e){}}));
+})();
+</script>
+<script data-goatcounter="https://sparkandlilystories.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+/* Count clicks on buttons and outgoing links (GoatCounter events, no cookies) */
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a || !window.goatcounter || !window.goatcounter.count) return;
+  var h = a.getAttribute('href') || '';
+  var name = null;
+  if (/\.pdf$/i.test(h)) name = 'download-' + h.split('/').pop().replace(/\.pdf$/i, '');
+  else if (/payhip\.com/i.test(h)) name = 'payhip-' + (h.split('/').pop() || 'shop');
+  else if (/^https?:/i.test(h)) { try { name = 'out-' + new URL(h).hostname.replace(/^www\./, ''); } catch (x) {} }
+  if (!name) return;
+  window.goatcounter.count({ path: name + '@first-snow', title: (a.textContent || '').trim().slice(0, 60), event: true });
+});
+</script>
+</body>
+</html>
