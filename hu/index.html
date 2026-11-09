@@ -209,11 +209,24 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
 
 /* seasonal banner (Nov–Dec) – remove in January */
 .xmas{background:linear-gradient(180deg,#141a3d 0%,var(--night) 100%);padding:clamp(28px,5vw,48px) 0}
-.xmas-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,40px);align-items:center;max-width:860px;margin:0 auto;padding:clamp(18px,3vw,28px);border-radius:24px;background:rgba(246,185,95,.07);box-shadow:inset 0 0 0 1px var(--line),0 0 60px -20px rgba(246,185,95,.45)}
-.xmas-card img{width:clamp(120px,22vw,200px);height:auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);display:block}
-.xmas-card h2{font-size:clamp(26px,3.6vw,40px);margin:10px 0 8px}
-.xmas-card p{color:var(--muted);margin:0 0 18px}
-@media (max-width:560px){.xmas-card{grid-template-columns:1fr;text-align:center;justify-items:center}}
+.winter-head{text-align:center;margin-bottom:clamp(18px,3vw,28px)}
+.winter-head h2{font-size:clamp(26px,3.6vw,40px);margin-top:10px}
+.winter{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,24px)}
+.wcard{display:grid;grid-template-rows:auto 1fr;text-decoration:none;border-radius:20px;overflow:hidden;background:rgba(246,185,95,.07);box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.wcard:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--glow),0 0 50px -18px rgba(246,185,95,.6)}
+.wcard img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.wcard > div{display:grid;gap:6px;padding:16px 18px 18px;align-content:start}
+.wcard h3{font-size:21px}
+.wcard p{color:var(--muted);font-size:15px;line-height:1.45}
+.wfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;font-weight:600}
+.wfoot strong{color:var(--glow);font-size:18px}
+.wgo{color:var(--amber);font-size:15px}
+@media (max-width:760px){.winter{grid-template-columns:1fr;gap:12px}.wcard{grid-template-rows:none;grid-template-columns:128px 1fr}.wcard img{height:100%;aspect-ratio:auto}.wcard > div{padding:12px 14px}.wcard h3{font-size:18px}.wcard p{font-size:14px}}
+.freebie{display:inline-flex;align-items:center;gap:12px;text-decoration:none;padding:8px 22px 8px 10px;border-radius:18px;background:var(--amber);color:#2a1d10;text-align:left;box-shadow:0 10px 30px -10px rgba(246,185,95,.8);transition:transform .2s,background .2s}
+.freebie:hover{transform:translateY(-2px);background:var(--glow)}
+.freebie img{width:46px;height:62px;object-fit:cover;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.35);transform:rotate(-4deg)}
+.freebie b{display:block;font:600 17px/1.15 var(--body)}
+.freebie small{display:block;font:600 12.5px/1.3 var(--body);opacity:.75;margin-top:3px}
 </style>
 <!-- schema:site -->
 <script type="application/ld+json">
@@ -496,24 +509,21 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
       <h1>Little <span>Spark</span> Stories</h1>
       <p class="sub">Nyugodt, szelíd mesék a legkisebbeknek.</p>
       <div class="row">
-        <a class="btn" href="/free/Hogyan-szuletett-Spark.pdf" download>Kérem az ingyenes mesét</a>
-        <a class="btn ghost" href="#books">Spark könyvei</a>
+        <a class="freebie" href="/free/Hogyan-szuletett-Spark.pdf" download><img src="../assets/free-cover-hu.jpg" alt="" width="46" height="62"><span><b>Kérem az ingyenes mesét</b><small>Hogyan született Spark · PDF, e-mail nélkül</small></span></a>
+        <a class="btn ghost" href="#winter">Az új téli könyvek</a>
       </div>
       <button class="say" type="button" data-clip="../assets/voice/hu/hello.mp3" data-text="Szia! Spark vagyok. Itt születtem, ebben a könyvtárban. Keressünk együtt egy mesét?"><i class="orb" aria-hidden="true"></i><span class="lbl">Köszönj Sparknak</span><span class="bubble" aria-live="polite"></span></button>
       <p class="hint" id="hint">Mozgasd az egeret! Spark figyel téged.</p>
     </div>
   </section>
 
-  <section class="xmas" aria-label="Spark adventi naptára">
+  <section class="xmas" id="winter" aria-label="Új téli könyvek">
     <div class="wrap">
-      <div class="xmas-card">
-        <img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója" loading="lazy">
-        <div>
-          <span class="kicker">Közeleg a karácsony ✨</span>
-          <h2>Spark adventi naptára</h2>
-          <p>24 kis mese decemberre, minden reggelre egy · <strong style="color:var(--glow)">£3.99</strong></p>
-          <a class="btn" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener">Megnézem a könyvet →</a>
-        </div>
+      <div class="winter-head"><span class="kicker">Új téli könyvek ❄️</span><h2>Meghitt mesék hideg estékre</h2></div>
+      <div class="winter">
+        <a class="wcard" href="https://payhip.com/b/TU4L2" target="_blank" rel="noopener"><img src="../assets/books-advent-hu.jpg" alt="A Spark adventi naptára borítója és egy belső oldala" loading="lazy"><div><h3>Spark adventi naptára</h3><p>24 kis mese, minden decemberi reggelre egy</p><span class="wfoot"><strong>£3.99</strong><span class="wgo">Megnézem →</span></span></div></a>
+        <a class="wcard" href="https://payhip.com/b/wsMlY" target="_blank" rel="noopener"><img src="../assets/books-newfriend-hu.jpg" alt="A Spark új barátot talál a téli vásárban borítója és egy belső oldala" loading="lazy"><div><h3>Spark új barátot talál</h3><p>Meghitt téli mese arról, amikor minden túl sok</p><span class="wfoot"><strong>£2.99</strong><span class="wgo">Megnézem →</span></span></div></a>
+        <a class="wcard" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><img src="../assets/books-snow-hu.jpg" alt="A Spark és az első hó borítója és egy belső oldala" loading="lazy"><div><h3>Spark és az első hó</h3><p>Szelíd első havas nap · magyarul, angolul és kétnyelvűen</p><span class="wfoot"><strong>£3.99</strong><span class="wgo">Megnézem →</span></span></div></a>
       </div>
     </div>
   </section>

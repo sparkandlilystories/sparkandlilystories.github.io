@@ -208,11 +208,24 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
 
 /* seasonal banner (Nov–Dec) – remove in January */
 .xmas{background:linear-gradient(180deg,#141a3d 0%,var(--night) 100%);padding:clamp(28px,5vw,48px) 0}
-.xmas-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,40px);align-items:center;max-width:860px;margin:0 auto;padding:clamp(18px,3vw,28px);border-radius:24px;background:rgba(246,185,95,.07);box-shadow:inset 0 0 0 1px var(--line),0 0 60px -20px rgba(246,185,95,.45)}
-.xmas-card img{width:clamp(120px,22vw,200px);height:auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);display:block}
-.xmas-card h2{font-size:clamp(26px,3.6vw,40px);margin:10px 0 8px}
-.xmas-card p{color:var(--muted);margin:0 0 18px}
-@media (max-width:560px){.xmas-card{grid-template-columns:1fr;text-align:center;justify-items:center}}
+.winter-head{text-align:center;margin-bottom:clamp(18px,3vw,28px)}
+.winter-head h2{font-size:clamp(26px,3.6vw,40px);margin-top:10px}
+.winter{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,24px)}
+.wcard{display:grid;grid-template-rows:auto 1fr;text-decoration:none;border-radius:20px;overflow:hidden;background:rgba(246,185,95,.07);box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}
+.wcard:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--glow),0 0 50px -18px rgba(246,185,95,.6)}
+.wcard img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.wcard > div{display:grid;gap:6px;padding:16px 18px 18px;align-content:start}
+.wcard h3{font-size:21px}
+.wcard p{color:var(--muted);font-size:15px;line-height:1.45}
+.wfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px;font-weight:600}
+.wfoot strong{color:var(--glow);font-size:18px}
+.wgo{color:var(--amber);font-size:15px}
+@media (max-width:760px){.winter{grid-template-columns:1fr;gap:12px}.wcard{grid-template-rows:none;grid-template-columns:128px 1fr}.wcard img{height:100%;aspect-ratio:auto}.wcard > div{padding:12px 14px}.wcard h3{font-size:18px}.wcard p{font-size:14px}}
+.freebie{display:inline-flex;align-items:center;gap:12px;text-decoration:none;padding:8px 22px 8px 10px;border-radius:18px;background:var(--amber);color:#2a1d10;text-align:left;box-shadow:0 10px 30px -10px rgba(246,185,95,.8);transition:transform .2s,background .2s}
+.freebie:hover{transform:translateY(-2px);background:var(--glow)}
+.freebie img{width:46px;height:62px;object-fit:cover;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.35);transform:rotate(-4deg)}
+.freebie b{display:block;font:600 17px/1.15 var(--body)}
+.freebie small{display:block;font:600 12.5px/1.3 var(--body);opacity:.75;margin-top:3px}
 </style>
 <!-- schema:site -->
 <script type="application/ld+json">
@@ -495,24 +508,21 @@ footer .small{font-size:13px; opacity:.85; max-width:70ch}
       <h1>Little <span>Spark</span> Stories</h1>
       <p class="sub">Calm, gentle stories for little ones.</p>
       <div class="row">
-        <a class="btn" href="/free/How-Spark-Was-Born.pdf" download>Get the free book</a>
-        <a class="btn ghost" href="https://payhip.com/LittleSparkStories" target="_blank" rel="noopener">Visit the shop</a>
+        <a class="freebie" href="/free/How-Spark-Was-Born.pdf" download><img src="assets/free-cover.jpg" alt="" width="46" height="62"><span><b>Get the free book</b><small>How Spark Was Born · instant PDF, no email</small></span></a>
+        <a class="btn ghost" href="#winter">See the winter books</a>
       </div>
       <button class="say" type="button" data-clip="assets/voice/hello.mp3" data-text="Hello! I’m Spark. I was born right here, in this library. Shall we find a story together?"><i class="orb" aria-hidden="true"></i><span class="lbl">Say hello to Spark</span><span class="bubble" aria-live="polite"></span></button>
       <p class="hint" id="hint">Move around. Spark is watching you.</p>
     </div>
   </section>
 
-  <section class="xmas" aria-label="Spark’s Christmas Countdown">
+  <section class="xmas" id="winter" aria-label="New winter books">
     <div class="wrap">
-      <div class="xmas-card">
-        <img src="assets/books-christmas.jpg" alt="Cover of Spark's Christmas Countdown" loading="lazy">
-        <div>
-          <span class="kicker">Christmas is coming ✨</span>
-          <h2>Spark’s Christmas Countdown</h2>
-          <p>24 calm little stories for December, one for every morning · <strong style="color:var(--glow)">£4.99</strong></p>
-          <a class="btn" href="https://payhip.com/b/2PoYK" target="_blank" rel="noopener">See the book →</a>
-        </div>
+      <div class="winter-head"><span class="kicker">New for winter ❄️</span><h2>Cosy books for cold evenings</h2></div>
+      <div class="winter">
+        <a class="wcard" href="https://payhip.com/b/2PoYK" target="_blank" rel="noopener"><img src="assets/books-christmas.jpg" alt="Cover of Spark’s Christmas Countdown, with a peek at a page inside" loading="lazy"><div><h3>Spark’s Christmas Countdown</h3><p>24 calm little stories, one for every December morning</p><span class="wfoot"><strong>£4.99</strong><span class="wgo">See the book →</span></span></div></a>
+        <a class="wcard" href="https://payhip.com/b/K2XTz" target="_blank" rel="noopener"><img src="assets/books-newfriend.jpg" alt="Cover of Spark Meets a New Friend at the Winter Wonderland, with a peek at a page inside" loading="lazy"><div><h3>Spark Meets a New Friend</h3><p>A cosy winter story for when it all feels too much</p><span class="wfoot"><strong>£2.99</strong><span class="wgo">See the book →</span></span></div></a>
+        <a class="wcard" href="https://payhip.com/b/gohmR" target="_blank" rel="noopener"><img src="assets/books-snow.jpg" alt="Cover of Spark and the First Snow, with a peek at a page inside" loading="lazy"><div><h3>Spark and the First Snow</h3><p>A gentle first-snow day · English, Hungarian &amp; bilingual</p><span class="wfoot"><strong>£3.99</strong><span class="wgo">See the book →</span></span></div></a>
       </div>
     </div>
   </section>
